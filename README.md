@@ -22,8 +22,3 @@ Aplikasi ini menampilkan informasi pribadi, pengalaman, keahlian, dan portofolio
 ## Tentang Pengembang
 Dibuat oleh **Nazwa Syafiya Mirzal**, mahasiswi yang tertarik pada graphic design dan desain UI/UX.  
 Terima kasih telah melihat proyek ini.
-
-## Kontak
-Email: nazwasyafiya@example.com  
-LinkedIn: [linkedin.com/in/nazwasyafiya](https://linkedin.com/in/nazwasyafiya)  
-Instagram: [@nazwasm](https://instagram.com/nazwasm)
