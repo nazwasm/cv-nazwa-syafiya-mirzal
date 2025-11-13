@@ -18,7 +18,6 @@
       scroll-behavior: smooth;
     }
 
-    /* Palet Warna */
     :root {
       --primary: #c47a91;
       --secondary: #f4c2c2;
@@ -69,7 +68,6 @@
       font-size: 0.9rem;
     }
 
-    /* Scrollbar elegan */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -81,11 +79,34 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR RESPONSIVE -->
   <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-pink-100 shadow-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6">
       <h1 class="font-semibold text-2xl gradient-text">Curriculum Vitae</h1>
+
+      <!-- Menu Desktop -->
       <div class="hidden md:flex space-x-8 text-gray-600 text-sm font-medium">
+        <a href="#about" class="hover:text-[var(--primary)] transition">About</a>
+        <a href="#education" class="hover:text-[var(--primary)] transition">Education</a>
+        <a href="#experience" class="hover:text-[var(--primary)] transition">Experience</a>
+        <a href="#skills" class="hover:text-[var(--primary)] transition">Skills</a>
+        <a href="#portofolio" class="hover:text-[var(--primary)] transition">Portofolio</a>
+      </div>
+
+      <!-- Hamburger Mobile -->
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menu Mobile -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/90 backdrop-blur-md border-t border-pink-100">
+      <div class="flex flex-col space-y-4 py-4 px-6">
         <a href="#about" class="hover:text-[var(--primary)] transition">About</a>
         <a href="#education" class="hover:text-[var(--primary)] transition">Education</a>
         <a href="#experience" class="hover:text-[var(--primary)] transition">Experience</a>
@@ -157,7 +178,6 @@
     <div class="grid md:grid-cols-2 gap-8">
       <?php foreach ($keahlian as $skill): ?>
         <?php
-          // Tentukan nilai persentase berdasarkan level
           $level = strtolower($skill['level']);
           switch ($level) {
             case 'ahli': $percent = 95; break;
@@ -190,8 +210,6 @@
     <?php foreach ($portofolio as $porto): ?>
       <div class="mx-auto bg-white border border-pink-100 rounded-2xl shadow-lg p-10 max-w-4xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div class="flex flex-col md:flex-row items-center justify-between gap-8 text-left">
-          
-          <!-- Keterangan -->
           <div class="flex-1">
             <h3 class="text-2xl font-semibold mb-3" style="color:#c47a91;">
               <?= esc($porto['nama_proyek']); ?>
@@ -201,7 +219,6 @@
             </p>
           </div>
 
-          <!-- Tombol -->
           <?php if ($porto['link_porto']): ?>
             <div class="text-center md:text-right">
               <a href="<?= esc($porto['link_porto']); ?>" target="_blank"
@@ -217,18 +234,25 @@
   </div>
 </section>
 
-
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="py-8 text-center mt-10" style="background: linear-gradient(90deg, #c47a91, #e6a8b1); color: #fff;">
-    <p>© <?= date('Y'); ?> <?= esc($biodata['nama']); ?> — Thank you for taking a look! <span class="text-[var(--primary)]">❤</span></p>
-  </footer>
+  <p>© <?= date('Y'); ?> <?= esc($biodata['nama']); ?> — Thank you for taking a look! <span class="text-[var(--primary)]">❤</span></p>
+</footer>
 
-  <script>
-    AOS.init({
-      duration: 900,
-      once: true,
-      easing: 'ease-out-cubic'
-    });
-  </script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: true,
+    easing: 'ease-out-cubic'
+  });
+
+  // Toggle mobile menu
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
 </body>
 </html>
