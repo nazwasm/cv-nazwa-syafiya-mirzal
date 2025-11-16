@@ -17,7 +17,6 @@ Aplikasi ini menampilkan informasi pribadi, pengalaman, keahlian, dan portofolio
 
 ## Demo dan Portofolio
 - CV web: (https://nazwa.cvclassa.my.id/)
-  (https://portofolionazwasyafiya.my.canva.site/)
 - GitHub Repository: [cv-nazwa-syafiya-mirzal](https://github.com/nazwasm/cv-nazwa-syafiya-mirzal)
 
 ## Tentang Pengembang
